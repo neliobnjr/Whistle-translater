@@ -1,33 +1,36 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Whistle Translator</title>
-</head>
-<body>
+# Whistle Translater
 
-    <h1 style="text-align: center; font-size: 36px;">Whistle Translator</h1>
+This project is a fun experiment that translates a whistle sound from a laptop's microphone into a tone that can be played on an Arduino buzzer. It uses Python to listen to the microphone, extract the whistle's frequency using Fast Fourier Transform (FFT), and send the frequency information to the Arduino over a serial connection. The Arduino then generates the corresponding tone on the buzzer.
 
-    <p style="font-size: 18px;">This project is a fun experiment that allows you to play music with your mouth whistle through an Arduino buzzer. The project is composed of two main parts: a Python script that listens to your laptop's microphone and detects the frequency of the whistle, and an Arduino sketch that receives the frequency and plays the corresponding tone on the buzzer.</p>
+## Requirements
 
-    <h2 style="font-size: 28px;">Getting Started</h2>
+- Python 3.7 or higher
+- PyAudio
+- NumPy
+- Matplotlib
+- pyserial
+- Arduino IDE
+- Arduino board and buzzer
 
-    <p style="font-size: 18px;">To get started, you'll need an Arduino starter kit, a microphone, and a computer running Python 3. You'll also need to install a few Python libraries:</p>
+## Installation
 
-    <ul style="font-size: 18px;">
-        <li>numpy</li>
-        <li>matplotlib</li>
-        <li>pyaudio</li>
-        <li>serial</li>
-    </ul>
+1. Clone this repository: `git clone https://github.com/neliobnjr/whistle-translater.git`
+2. Change into the project directory: `cd whistle-translater`
+3. Install the required Python packages: `pip install -r requirements.txt`
+4. Open `whistle_translater.ino` in the Arduino IDE and upload it to your Arduino board.
+5. Connect the buzzer to the Arduino board as described in the `whistle_translater.ino` file.
+6. Run `python app.py` to start the Python script.
 
-    <p style="font-size: 18px;">Once you have the required hardware and software, you can connect the buzzer to the Arduino and upload the provided sketch. Then, run the Python script and start whistling!</p>
+## Usage
 
-    <h2 style="font-size: 28px;">Contributing</h2>
+1. Launch the Python script by running `python app.py`.
+2. Whistle into the microphone, making sure the sound is clear and strong.
+3. The script will output the detected frequency of the whistle in Hz and play the corresponding tone on the buzzer.
 
-    <p style="font-size: 18px;">If you'd like to contribute to this project, feel free to open a pull request or submit an issue. We welcome contributions of all kinds, including bug reports, feature requests, documentation improvements, and code contributions.</p>
+## Credits
 
-    <p style="font-size: 18px;">Happy whistling!</p>
+This project was created by neliobnjr as a fun experiment with Python and Arduino. The code is based on examples from the PyAudio and pyserial libraries.
 
-</body>
-</html>
+## License
+
+This project is licensed under the [MIT License](LICENSE).
